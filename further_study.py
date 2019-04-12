@@ -175,7 +175,19 @@ def custom_index(input_list, value):
 
     """
 
-    return 0
+    """
+        1) Use For Loop through our list using range
+        2) If value = element
+            2.a) Return index number
+    
+    """
+    chosen = 0
+    for i in range(0, len(input_list)):
+        if input_list[i] == value:
+            chosen = i
+
+
+    return chosen
 
 
 def custom_count(input_list, value):
@@ -191,7 +203,18 @@ def custom_count(input_list, value):
 
     """
 
-    return 0
+    """
+    1) set counter variable to count reoccurance
+    2) loop through list and if value is in list
+        add to count
+    3) return counter
+    """
+    count = 0
+    for elem in input_list:
+        if elem == value:
+            count += 1
+
+    return count
 
 
 def custom_reverse(input_list):
@@ -210,7 +233,7 @@ def custom_reverse(input_list):
 
     """
 
-    pass
+    input_list[:] = input_list[::-1]
 
 
 def custom_contains(input_list, value):
@@ -230,7 +253,9 @@ def custom_contains(input_list, value):
 
     """
 
-    return None
+    return value in input_list
+
+
 
 
 def custom_equality(some_list, another_list):
@@ -248,9 +273,16 @@ def custom_equality(some_list, another_list):
         False
 
     """
-
-    return None
-
+    flag = False  
+    if custom_len(some_list) == custom_len(another_list):
+        for i in range(0, len(some_list)):
+            if some_list[i] == another_list[i]:
+                flag = True
+            else:
+                flag = False
+        return flag        
+    else:
+        return False
 
 ##############################################################################
 # Please ask for a code review. Also, give your partner a high-five!
