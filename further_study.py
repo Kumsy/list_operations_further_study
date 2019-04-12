@@ -87,8 +87,10 @@ def custom_extend(input_list, second_list):
 
     # input_list += second_list[:] # Alt Solution
     length = custom_len(input_list)
-    input_list[length:length] = second_list[:]
+    input_list[length:length] = second_list[:]  #assigning everything contained in secondlist into input_list
 
+
+    #[:] <- means all elements in the list
 
 def custom_insert(input_list, index, value):
     """Insert value at index in the list.
@@ -150,8 +152,14 @@ def custom_pop(input_list):
         ['Jan', 'Feb']
 
     """
-
-    return None
+    """
+    1. take the last index of input_list and remove it
+    2. assign it a variable
+    3. return the removed index
+    """
+    last = input_list[-1]
+    input_list[-1:] = []  #start is -1 but ending at infinity unless it's defined
+    return last
 
 
 def custom_index(input_list, value):
